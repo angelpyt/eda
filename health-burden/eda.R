@@ -1,13 +1,12 @@
 # Exploratory data analysis (see readme for more detail)
 # Feel free to follow these steps, or complete your own EDA
 
-# Set up (install packages if you don't have them)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(plotly)
 library(vioplot)
-setwd('~/Documents/info-370/eda/health-burden/')
+setwd('~/desktop/info370/eda/health-burden/')
 risk.data <- read.csv('./data/prepped/risk-data.csv', stringsAsFactors = FALSE) 
 
 ######################
@@ -17,6 +16,15 @@ risk.data <- read.csv('./data/prepped/risk-data.csv', stringsAsFactors = FALSE)
 ## Using a variety of functions, investigate the structure of your data, such as:
 
 # Dimensions, column names, structure, summaries, etc.
+dim(risk.data)
+colnames(risk.data)
+
+#structure of the data
+str(risk.data)
+summary(risk.data)
+View(risk.data)
+
+which(duplicated(risk.data[1:5],))
 
 # Replacing missing values...?
 
@@ -26,8 +34,11 @@ risk.data <- read.csv('./data/prepped/risk-data.csv', stringsAsFactors = FALSE)
 
 ## Using a variety of approaches, investigate the structure each (risk column) individually
 
+
 # Summarize data
- 
+summary(risk.data[,8:ncol(risk.data)])
+hist(risk.data$deaths.rate)
+
 # Create histograms, violin plots, boxplots
 
 
